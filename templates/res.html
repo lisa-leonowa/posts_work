@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="/static/css/style.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <title>{{title}}</title>
+    </head>
+    <body>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>Id в БД</th>
+                        <th>Массив рубрик</th>
+                        <th>Текст документа</th>
+                        <th>Дата создания документа</th>
+                        <th>Удаление</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for res in otv %}
+                    <tr>
+                        <th>{{ res[0] }}</th>
+                        <td>{{ res[1] }}</td>
+                        <td>{{ res[2] }}</td>
+                        <td>{{ res[3] }}</td>
+                        <td>{{ res[4] }}</td>
+                        <td><a href="/delete/{{ res[1] }}" class="for_href btn btn-light")>Удалить</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="text-center">
+            <a href="/" class="for_href btn btn-primary")>Новый поиск</a>
+        </div>
+    </body>
+</html>

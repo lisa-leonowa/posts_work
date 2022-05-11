@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <title>{{title}}</title>
+    </head>
+    <body style="position: absolute; margin: centre;" class="container-fluid d-flex h-100 justify-content-center align-items-center">
+        <div class="row bg-white shadow-sm">
+            <div class="col border rounded">
+                <form action="" method="post" class="form-group">
+                    <div style="height: 100%; width: 100%;" class="text-center">
+                        <p>{{ form.zapros_search.label }}</p>
+                        <p style="width: 80%;"> {{ form.zapros_search }}</p>
+                        {% for error in form.zapros_search.errors %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ error }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="text-center">{{ form.submit(type="submit", class="btn btn-primary") }}</div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
